@@ -71,7 +71,7 @@
     };
 
     // Set the server for Bmob to talk to.
-    Bmob.serverURL = "";
+    Bmob.serverURL = "https://api.bmob.cn";
     Bmob.fileURL = "http://file.bmob.cn";
 
     // Check whether we are running in Node.js.
@@ -2789,7 +2789,14 @@
    * @param type {String} 文件的类型.
    */
     Bmob.File = function (name, data, type) {
+      var extension = /\.([^.]*)$/.exec(name);
+      if (extension == "mp4") {
+        data = data;
+      }
+      else {
         data = data[0];
+      }
+     
         this._name = name;
         // this._name = encodeBase64(utf16to8(name));
         var currentUser = Bmob.User.current();
@@ -2798,10 +2805,12 @@
         };
 
         // Guess the content type from the extension if we need to.
-        var extension = /\.([^.]*)$/.exec(name);
+        // var extension = /\.([^.]*)$/.exec(name);
         if (extension) {
             extension = extension[1].toLowerCase();
         }
+
+        console.log(extension);
         var guessedType = type || mimeTypes[extension] || "text/plain";
         this._guessedType = guessedType;
 
@@ -4176,7 +4185,24 @@
                 id = id + ',' + obj.id;
             }
         });
-        var request = Bmob._request("classes", className, id, 'DELETE');
+
+        var data = _.map(objects,
+          function (object) {
+            var json = object._getSaveJSON();
+            var method = "POST";
+
+            var path = "/1/classes/" + object.className;
+            if (object.id) {
+              path = path + "/" + object.id;
+              method = "DELETE";
+            }
+            object._startSave();
+            return {
+              method: method,
+              path: path,
+            };
+          })
+        var request = Bmob._request("batch", null, null, 'POST', {"requests":data});
         return request._thenRunCallbacks(options);
     };
 
