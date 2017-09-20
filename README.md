@@ -1,6 +1,23 @@
 # bmob-WeApp-sdk
 微信小程序SDK
 
+#### <i class="icon-file"></i> 版本 v3.3.0
+> **Note:**
+> - 增加主人通知接口
+> - 增加图文素材示例
+
+
+#### <i class="icon-file"></i> 版本 v3.2.0
+> **Note:**
+> - 增加webSocket通讯协议
+> - 增加群聊示例
+
+#### <i class="icon-file"></i> 版本 v3.1.0
+> **Note:**
+> 
+> - 模板调用图片，支持链试调用。 例如： obj.pic.url 
+> - 连表查询，不在需要重写对象。支持链试调用。  obj.user.nickname
+
 #### <i class="icon-file"></i> 版本 v3.0.0
 > **Note:**
 > 
