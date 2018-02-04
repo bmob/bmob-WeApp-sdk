@@ -1,0 +1,17 @@
+{
+  "name": "bmob-weapp-sdk",
+  "authors": [
+    "Bmob Cloud"
+  ],
+  "description": "Bmob 小程序客户端 SDK",
+  "main": "utils/bmob.js",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

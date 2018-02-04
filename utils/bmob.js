@@ -73,8 +73,6 @@
     // Set the server for Bmob to talk to.
     Bmob.serverURL = "https://api.bmob.cn";
     Bmob.fileURL = "http://file.bmob.cn";
-    Bmob.socketURL = "https://api.bmob.cn";
-
 
     // Check whether we are running in Node.js.
     if (typeof (process) !== "undefined" && process.versions && process.versions.node) {
@@ -83,10 +81,10 @@
 
     /**
    * 初始化时需要调用这个函数。可以从bmob中获取所需的key
-   *
+   * 
    * @param {String} applicationId 你的 Application ID.
    * @param {String} applicationKey 你的 restful api Key.
-   * @param {String} masterKey (optional) 你的 bmob Master Key.
+   * @param {String} masterKey (optional) 你的 bmob Master Key. 
    */
     Bmob.initialize = function (applicationId, applicationKey, masterKey) {
         Bmob._initialize(applicationId, applicationKey, masterKey);
@@ -247,7 +245,7 @@
                 }
             });
         } else {
-
+           
             wx.request({
                 method: method,
                 url: url,
@@ -348,7 +346,7 @@
         return Bmob._ajax(method, url, data).then(null,
             function (response) {
                 // Transform the error into an instance of Bmob.Error by trying to parse
-                // the error string as JSON.
+                // the error string as JSON.          
                 var error;
                 try {
                     if (response.data.code) {
@@ -1256,7 +1254,7 @@
    * 如果传任何参数，则任何人都没有权限
    * 如果传入的参数是Bmob.User，那个usr会有读写权限。
    * 如果传入的参数是json对象，则会有相应的acl权限。
-   *
+   * 
    * @see Bmob.Object#setACL
    * @class
    *
@@ -2771,11 +2769,11 @@
    * cloud.
    * @param name {String} 文件名。在服务器中，这会改为唯一的文件名
    * @param data {file} 文件的数据
-   *
+   *     
    *     文件对象是在" file upload control"中被选中，只能在下面的浏览器使用
    *        in Firefox 3.6+, Safari 6.0.2+, Chrome 7+, and IE 10+.
    *        例如:<pre>
-   *
+   *     
    * var fileUploadControl = $("#profilePhotoFileUpload")[0];
    * if (fileUploadControl.files.length > 0) {
    *   var file = fileUploadControl.files[0];
@@ -2797,7 +2795,7 @@
       else {
         data = data[0];
       }
-
+     
         this._name = name;
         // this._name = encodeBase64(utf16to8(name));
         var currentUser = Bmob.User.current();
@@ -2959,7 +2957,7 @@
 
         var data = {
             _ContentType: "application/json",
-            // url:_url,
+            // url:_url,           
         };
         var request = Bmob._request("2/files/upyun", _url[1], null, 'DELETE', data);
         return request.then(function (resp) {
@@ -4570,7 +4568,7 @@
    *
    * @param {Object} options  Backbone-style options 的可选options object.
    * 有效的 options<ul>
-   *   <li>model: Bmob.Object
+   *   <li>model: Bmob.Object 
    *   <li>query: Bmob.Query
    *   <li>comparator: 属性名称或排序函数
    * </ul>
@@ -4618,7 +4616,7 @@
             initialize: function () { },
 
             /**
-         *
+         * 
          * json 格式的models'属性数组
          */
             toJSON: function () {
@@ -4690,7 +4688,7 @@
             },
 
             /**
-         * 移除一个model，或者从集合中移除一系列models。当移除对象时，传入silent避免触发<code>remove</code>事件。
+         * 移除一个model，或者从集合中移除一系列models。当移除对象时，传入silent避免触发<code>remove</code>事件。  
          */
             remove: function (models, options) {
                 var i, l, index, model;
@@ -5163,7 +5161,7 @@
     /**
    * @class
    *
-   * <p>这个类是Bmob.Object的子类，同时拥有Bmob.Object的所有函数，但是扩展了用户的特殊函数，例如验证，登录等</p>
+   * <p>这个类是Bmob.Object的子类，同时拥有Bmob.Object的所有函数，但是扩展了用户的特殊函数，例如验证，登录等</p>   
    */
     Bmob.User = Bmob.Object.extend("_User",
         /** @lends Bmob.User.prototype */
@@ -5504,7 +5502,7 @@
             },
 
             /**
-         * 获取一个对象
+         * 获取一个对象	   
          * @see Bmob.Object#fetch
          */
             fetch: function (options) {
@@ -5666,7 +5664,7 @@
             },
 
             /**
-
+    
          * 把重设密码的邮件发送到用户的注册邮箱。邮件允许用户在bmob网站上重设密码。
          * <p>完成后调用options.success 或者 options.error</p>
          *
@@ -5795,11 +5793,11 @@
    * 为Bmob.Object类创建一个新的bmob Bmob.Query 。
    * @param objectClass -
    *   Bmob.Object的实例，或者Bmob类名
-   *
+   * 
    *
    * <p>Bmob.Query 为Bmob.Objects定义了query操作。最常用的操作就是用query<code>find</code>
    * 操作去获取所有的对象。例如，下面简单的操作是获取所有的<code>MyClass</code>。根据操作的成功或失败，
-   * 会回调不同的函数。
+   * 会回调不同的函数。      
    * <pre>
    * var query = new Bmob.Query(MyClass);
    * query.find({
@@ -5813,7 +5811,7 @@
    * });</pre></p>
    *
    * <p>Bmob.Query也可以用来获取一个id已知的对象。例如，下面的例子获取了<code>MyClass</code> 和 id <code>myId</code>
-   * 根据操作的成功或失败，会回调不同的函数。
+   * 根据操作的成功或失败，会回调不同的函数。  
    * <pre>
    * var query = new Bmob.Query(MyClass);
    * query.get(myId, {
@@ -5826,7 +5824,7 @@
    *   }
    * });</pre></p>
    *
-   * <p>Bmob.Query 同时也能获取查询结果的数目。例如，下面的例子获取了<code>MyClass</code>的数目<pre>
+   * <p>Bmob.Query 同时也能获取查询结果的数目。例如，下面的例子获取了<code>MyClass</code>的数目<pre>   
    * var query = new Bmob.Query(MyClass);
    * query.count({
    *   success: function(number) {
@@ -5837,7 +5835,7 @@
    *     // error is an instance of Bmob.Error.
    *   }
    * });</pre></p>
-
+   
    * @class Bmob.Query 为Bmob.Objects定义了query操作
    */
     Bmob.Query = function (objectClass) {
@@ -5890,7 +5888,7 @@
             return obj;
         },
 
-        /**
+        /**	   
      * 获取Bmob.Object，适用于id已经知道的情况。当查询完成会调用options.success 或 options.error。
      * @param {} objectId 要获取的对象id
      * @param {Object} options  Backbone-style options 对象.
@@ -6252,7 +6250,7 @@
         /**
      * 添加查询： key's value 匹配一个对象，这个对象通过不同的Bmob.Query返回。
      * @param {String} key 需要匹配的key值
-     * @param {String} queryKey 返回通过匹配的查询的对象的键
+     * @param {String} queryKey 返回通过匹配的查询的对象的键 
      * @param {Bmob.Query} query 需要运行的查询
      * @return {Bmob.Query} 返回查询对象，因此可以使用链式调用。
      */
@@ -6270,7 +6268,7 @@
      * 添加查询： key's value 不匹配一个对象，这个对象通过不同的Bmob.Query返回。
      * @param {String} key 需要匹配的key值
      *                     excluded.
-     * @param {String} queryKey 返回通过不匹配的查询的对象的键
+     * @param {String} queryKey 返回通过不匹配的查询的对象的键 
      * @param {Bmob.Query} query 需要运行的查询
      * @return {Bmob.Query} 返回查询对象，因此可以使用链式调用。
      */
@@ -6381,7 +6379,7 @@
         /**
      * 查找一个geo point 附近的坐标。
      * @param {String} key Bmob.GeoPoint的key
-     * @param {Bmob.GeoPoint} point 指向一个 Bmob.GeoPoint
+     * @param {Bmob.GeoPoint} point 指向一个 Bmob.GeoPoint 
      * @return {Bmob.Query} 返回查询对象，因此可以使用链式调用。
      */
         near: function (key, point) {
@@ -6396,7 +6394,7 @@
         /**
      * 添加用于查找附近的对象，并基于弧度给出最大距离内的点。
      * @param {String} key Bmob.GeoPoint的key
-     * @param {Bmob.GeoPoint} point 指向一个 Bmob.GeoPoint
+     * @param {Bmob.GeoPoint} point 指向一个 Bmob.GeoPoint 
      * @param maxDistance 返回的最大距离，基于弧度.
      * @return {Bmob.Query} 返回查询对象，因此可以使用链式调用。
      */
@@ -6409,7 +6407,7 @@
         /**
      * 添加用于查找附近的对象，并基于米给出最大距离内的点。
      * @param {String} key Bmob.GeoPoint的key
-     * @param {Bmob.GeoPoint} point 指向一个 Bmob.GeoPoint
+     * @param {Bmob.GeoPoint} point 指向一个 Bmob.GeoPoint 
      * @param maxDistance 返回的最大距离，基于弧度.
      * @return {Bmob.Query} 返回查询对象，因此可以使用链式调用。
      */
@@ -6420,7 +6418,7 @@
         /**
      * 添加用于查找附近的对象，并基于千米给出最大距离内的点。
      * @param {String} key Bmob.GeoPoint的key
-     * @param {Bmob.GeoPoint} point 指向一个 Bmob.GeoPoint
+     * @param {Bmob.GeoPoint} point 指向一个 Bmob.GeoPoint 
      * @param maxDistance 返回的最大距离，基于弧度.
      * @return {Bmob.Query} 返回查询对象，因此可以使用链式调用。
      */
@@ -6432,7 +6430,7 @@
      * 在一个四边形范围内，查找某个点附近的对象
      * @param {String} key The key to be constrained.
      * @param {Bmob.GeoPoint} southwest 这个四边形的南西方向
-     * @param {Bmob.GeoPoint} northeast 这个四边形的东北方向
+     * @param {Bmob.GeoPoint} northeast 这个四边形的东北方向 
      * @return {Bmob.Query} 返回查询对象，因此可以使用链式调用。
      */
         withinGeoBox: function (key, southwest, northeast) {
@@ -6923,7 +6921,7 @@
    */
     Bmob.Router.extend = Bmob._extend;
 
-
+   
 
     /**
 * @namespace 生成二维码
@@ -6943,22 +6941,8 @@
     */
     Bmob.sendMessage = Bmob.sendMessage || {};
     Bmob.sendMessage = function (data, options) {
-
+     
       var request = Bmob._request("wechatApp/SendWeAppMessage", null, null, 'POST', Bmob._encode(data, null, true));
-
-      return request.then(function (resp) {
-        return Bmob._decode(null, resp);
-      })._thenRunCallbacks(options);
-
-    }
-
-    /**
-    * @namespace 发送主人模板消息
-    */
-    Bmob.sendMasterMessage = Bmob.sendMasterMessage || {};
-    Bmob.sendMasterMessage = function (data, options) {
-
-      var request = Bmob._request("wechatApp/notifyMsg", null, null, 'POST', Bmob._encode(data, null, true));
 
       return request.then(function (resp) {
         return Bmob._decode(null, resp);
@@ -6980,7 +6964,7 @@
          * 请求发送短信内容
          * @param {Object} 相应的参数
          * @param {Object} Backbone-style options 对象。 options.success, 如果设置了，将会处理云端代码调用成功的情况。 options.error 如果设置了，将会处理云端代码调用失败的情况。 两个函数都是可选的。两个函数都只有一个参数。
-         * @return {Bmob.Promise}
+         * @return {Bmob.Promise} 
          */
             requestSms: function (data, options) {
                 var request = Bmob._request("requestSms", null, null, 'POST', Bmob._encode(data, null, true));
@@ -7047,9 +7031,9 @@
             /**
              * 网页端调起小程序支付接口
              * @param {float} 价格
-             * @param {String} 商品名称
+             * @param {String} 商品名称    
              * @param {String} 描述
-             * @param {String} OPEN ID
+             * @param {String} OPEN ID          
              * @param {Object} options  -style options 对象。
              * options.success, 如果设置了，将会处理云端代码调用成功的情况。  options.error 如果设置了，将会处理云端代码调用失败的情况。  两个函数都是可选的。两个函数都只有一个参数。
              * @return {Bmob.Promise} A promise 将会处理云端代码调用的情况。
@@ -7066,7 +7050,7 @@
 
             /**
              * 查询订单
-             * @param {String} 订单id
+             * @param {String} 订单id        
              * @param {Object} options  Backbone-style options 对象。
              * options.success, 如果设置了，将会处理云端代码调用成功的情况。  options.error 如果设置了，将会处理云端代码调用失败的情况。  两个函数都是可选的。两个函数都只有一个参数。
              * @return {Bmob.Promise} A promise 将会处理云端代码调用的情况。
@@ -7143,14 +7127,4 @@
         var request = Bmob._request('push', null, null, 'POST', data);
         return request._thenRunCallbacks(options);
     };
-
-
-    var io = ('undefined' === typeof module ? {} : module.exports);
-    var BmobSocketIo = {};
-    exports.BmobSocketIo = BmobSocketIo;
-
-
-
-
-
 }.call(this));
