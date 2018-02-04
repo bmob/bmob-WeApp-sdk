@@ -4,7 +4,7 @@ Bmob 微信小程序SDK
 
 
 ### SDK 获取与安装
-Bmob 小程序解决方案客户端 [Demo](https://github.com/magic007/wechatAppDemo"Demo") 已经集成并使用最新版的 SDK，并且已经写了大量常见业务代码。需要快速了解的可以从 [Demo](https://github.com/magic007/wechatAppDemo"Demo") 开始。
+Bmob 小程序解决方案客户端 [Demo](https://github.com/magic007/wechatAppDemo "Demo") 已经集成并使用最新版的 SDK，并且已经写了大量常见业务代码。需要快速了解的可以从 [Demo](https://github.com/magic007/wechatAppDemo "Demo") 开始。
 
 
 ### 将sdk引入到微信小程序中
@@ -38,7 +38,7 @@ Bmob.initialize("你的Application ID", "你的REST API Key");
 >Tip: 如果你的小程序不需要获取用户`open id`功能，则不需要配置。
 
 >### 开发文档
-[Bmob 小程序开发文档](http://doc.bmob.cn/data/wechat_app/index.html"开发文档")
+[Bmob 小程序开发文档](http://doc.bmob.cn/data/wechat_app/index.html" 开发文档")
 
 
 ----------
