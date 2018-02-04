@@ -3,11 +3,11 @@ Bmob 微信小程序SDK
 本项目是Bmob 为小程序客户端开发提供 SDK 支持，里面包含实时数据与数据存储相关操作。
 
 
-###SDK 获取与安装
+### SDK 获取与安装
 Bmob 小程序解决方案客户端 [Demo](https://github.com/magic007/wechatAppDemo"Demo") 已经集成并使用最新版的 SDK，并且已经写了大量常见业务代码。需要快速了解的可以从 [Demo](https://github.com/magic007/wechatAppDemo"Demo") 开始。
 
 
-###将sdk引入到微信小程序中
+### 将sdk引入到微信小程序中
 ----------
 > 方法一：
 1. 下载将`utils`目录 复制至项目目录下
@@ -16,11 +16,12 @@ Bmob 小程序解决方案客户端 [Demo](https://github.com/magic007/wechatApp
 		Bmob.initialize("你的Application ID", "你的REST API Key");
 
 > 方法二：
+```
 npm install -g bower
 bower install bmob-weapp
 const Bmob = require('./bower_components/bmob-weapp/utils/bmob.js');
 Bmob.initialize("你的Application ID", "你的REST API Key");
-
+```
 
 
 本小程序Sdk 不需要购买任何相关服务器，即可操作数据库与微信小程序打通，开箱即用。如是之前平台老用户则不需重复申请账号，并且打通之前的Android，IOS，等平台数据，本示例整合了常用的功能，开发请按照以下步骤操作。
