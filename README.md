@@ -12,8 +12,10 @@ Bmob 小程序解决方案客户端 [Demo](https://github.com/magic007/wechatApp
 > 方法一：
 1. 下载将`utils`目录 复制至项目目录下
 2. App.js 初始化SDK
-		const Bmob = require('utils/bmob.js');  
-		Bmob.initialize("你的Application ID", "你的REST API Key");
+```
+const Bmob = require('utils/bmob.js');
+Bmob.initialize("你的Application ID", "你的REST API Key");
+```
 
 > 方法二：
 ```
@@ -26,9 +28,10 @@ Bmob.initialize("你的Application ID", "你的REST API Key");
 
 本小程序Sdk 不需要购买任何相关服务器，即可操作数据库与微信小程序打通，开箱即用。如是之前平台老用户则不需重复申请账号，并且打通之前的Android，IOS，等平台数据，本示例整合了常用的功能，开发请按照以下步骤操作。
 
->### 小程序实战学习视频教程
+### 小程序实战学习视频教程
 
-#### 链接地址：[小程序视频教程](http://doc.bmob.cn/video/index.html#3 "小程序视频教程")
+#### 链接地址：
+[小程序视频教程](http://doc.bmob.cn/video/index.html#3 "小程序视频教程")
 
 >Tip: 如果你对数据处理要求比较高，可以引入`underscore.js`库。
 
@@ -38,9 +41,15 @@ Bmob.initialize("你的Application ID", "你的REST API Key");
 >Tip: 如果你的小程序不需要获取用户`open id`功能，则不需要配置。
 
 >### 开发文档
-[Bmob 小程序开发文档](http://doc.bmob.cn/data/wechat_app/index.html" 开发文档")
+[Bmob 小程序开发文档](http://doc.bmob.cn/data/wechat_app/index.html "开发文档")
 
-
+----------
+#### <i class="icon-file"></i> 版本 v3.5.0
+> **Note:**
+> - 数据SDK整合app.js相关功能
+> - 数据启用新域名
+> - 增加全新socketSDK
+> - 优化登陆流程，登陆更加智能
 ----------
 #### <i class="icon-file"></i> 版本 v3.4.1
 > **Note:**
@@ -68,13 +77,13 @@ Bmob.initialize("你的Application ID", "你的REST API Key");
 
 #### <i class="icon-file"></i> 版本 v3.0.0
 > **Note:**
-> 
+>
 > - 此版本主要变动开发者请求API地址，兼容微信白名单工单
 > - index代码增加模板消息推送。
 
 #### <i class="icon-file"></i> 版本 v2.1.0
 > **Note:**
-> 
+>
 > - 增加日记详细页面
 > - 修复小程序点击事件冒泡问题catchtap
 > - 首页增加模糊搜索
@@ -82,33 +91,33 @@ Bmob.initialize("你的Application ID", "你的REST API Key");
 
 #### <i class="icon-file"></i> 版本 v2.0.2
 > **Note:**
-> 
+>
 > - 增加我发布的
 > - 修复部分bug
 
 
 #### <i class="icon-file"></i> 版本 v2.0.1
 > **Note:**
-> 
+>
 > - 图片上传增加批量上传
 > - 页面底部增加版权
 
 #### <i class="icon-file"></i> 版本 v2.0.0
 > **Note:**
-> 
+>
 > - 增加新接口，生成二维码应用内推广链接
 > - 升级UI2.0
 > - 增加反馈功能模版
 
 #### <i class="icon-file"></i> 版本 v1.1.0
 > **Note:**
-> 
+>
 > - 增加新登录接口，使用请看app.js
 > - 增加新图片删除接口，使用请看接口图片上传
 
 #### <i class="icon-file"></i> 版本 v1.0.0
 > **Note:**
-> 
+>
 > - 增加微信支付接口，只需填写key即可微信收款
 
 
