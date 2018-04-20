@@ -1,0 +1,22 @@
+{
+  "name": "bmob-weapp",
+  "version": "3.5.0",
+  "description": "小程序SDK",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bmob/bmob-WeApp-sdk.git"
+  },
+  "keywords": [
+    "bmob"
+  ],
+  "author": "magic",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bmob/bmob-WeApp-sdk/issues"
+  },
+  "homepage": "https://github.com/bmob/bmob-WeApp-sdk#readme"
+}

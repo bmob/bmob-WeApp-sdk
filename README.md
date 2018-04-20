@@ -44,7 +44,19 @@ Bmob.initialize("你的Application ID", "你的REST API Key");
 [Bmob 小程序开发文档](http://doc.bmob.cn/data/wechat_app/index.html "开发文档")
 
 ----------
+
+
+#### <i class="icon-file"></i> 版本 v3.6.0
+
+> **Note:**
+>
+> - 登陆 auth() 函数，增加then回调，如果出现错误，控制台会提示
+> - 兼容小程序游戏，去掉hideNavigationBarLoading 相关函数
+> - 增加微信支付退款功能
+> - 修复批量删除函数必须用Bmob对象Bug
+
 #### <i class="icon-file"></i> 版本 v3.5.0
+
 > **Note:**
 > - 数据SDK整合app.js相关功能
 > - 数据启用新域名
