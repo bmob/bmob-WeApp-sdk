@@ -45,6 +45,15 @@ Bmob.initialize("你的Application ID", "你的REST API Key");
 
 ----------
 
+#### <i class="icon-file"></i> 版本 v3.6.1
+
+> **Note:**
+>
+> - 应微信要求，登陆 auth() 函数，不再保存用户头像
+>
+> - 增加user.getUserInfo()函数， 更新用户昵称头像信息
+>
+>   ​
 
 #### <i class="icon-file"></i> 版本 v3.6.0
 
